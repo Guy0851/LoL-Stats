@@ -1,4 +1,5 @@
 import logo from '../images/Logo-LoL-Stats.webp'
+import titre from '../images/titre-teemode-stats.webp'
 
 function Header(){
     return (
@@ -8,7 +9,14 @@ function Header(){
                     className='logo-tamo'
                     src={logo}
                     alt="teemo-3D"
-                    />
+                />
+            </a>
+            <a href='/home'>
+                <img
+                    className='titre-teemode'
+                    src={titre}
+                    alt='titre-en-ballon'
+                />
             </a>
             <a
                 className="App-link"

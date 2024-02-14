@@ -8,7 +8,9 @@
 }
 
 .App-header {
-  background-color: #5e5e5e;
+  background: linear-gradient(to bottom,  #ffffff, #e9e9e9);
+  -webkit-box-shadow: 3px 2px 32px 2px rgba(0,0,0,0.78); 
+  box-shadow: 3px 2px 32px 2px rgba(0,0,0,0.78);
   height: 10vh;
   display: flex;
   flex-direction: row;
@@ -26,4 +28,9 @@
 .logo-tamo{
   margin-top: 0.8vh;
   width: 12vh;
+}
+
+.titre-teemode{
+  height: 10vh;
+  margin-top: 2vh;
 }
