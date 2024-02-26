@@ -5,8 +5,8 @@ import ImportAll from '../../components/ImportAll.jsx';
 import SumInfo from './SumInfo.jsx';
 // import Match from './Match.jsx';
 
-let api_key='RGAPI-726f61a6-5567-4519-863a-3f43dd28a0c0'
-let summoner='Sprintrun08'
+let api_key='RGAPI-4b0177af-ebea-455a-8002-952dc4cff567'
+let summoner='GuyLeMuscle'
 
 
 const champIcon = ImportAll(require.context('../../images/champion', false, /\.(png|jpe?g|svg)$/));
@@ -72,7 +72,7 @@ function Results(){
                                 <h1>
                                     <strong>Type de partie : {matchData[index]?.info?.gameMode}</strong>
                                 </h1>
-                                <ul>
+                                <div>
                                     {matchData[index]?.info?.participants?.map((participant, indexBis) => (
                                         <span key={indexBis}>
                                             {participant.summonerName === sumsInfos.name ? (
@@ -88,7 +88,7 @@ function Results(){
                                             )}
                                         </span>
                                     ))}
-                                </ul>
+                                </div>
                                 <br/>
                             </div>
                         ))}
