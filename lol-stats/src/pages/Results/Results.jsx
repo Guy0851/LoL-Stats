@@ -3,9 +3,9 @@ import Header from "../../components/Header.jsx";
 import logoLol from "../../images/logo-lol.webp";
 import ImportAll from '../../components/ImportAll.jsx';
 import SumInfo from './SumInfo.jsx';
-// import Match from './Match.jsx';
+import Match from './Match.jsx';
 
-let api_key='RGAPI-4b0177af-ebea-455a-8002-952dc4cff567'
+let api_key='RGAPI-2d19c9fd-9e42-4898-b453-4bb5ca4e12ac'
 let summoner='GuyLeMuscle'
 
 
@@ -49,50 +49,28 @@ function Results(){
                     src={logoLol}
                     alt="logo de league of legends"
                 />
-                <SumInfo 
-                    nom={sumsInfos.name} 
-                    niveau={sumsInfos.summonerLevel} 
-                    icone={icons[sumsInfos.profileIconId+".png"]}
-                    // Affichage des informations spécifiques à l'invocateur recherché
-                    />
                 <div>
                     <h2>Matches:</h2>
-                    <ul>
-                        {/* <Match
-
-                        /> */}
-                        {matchId.map((id, index) => (
-                            // <Match
-                            //     winBool={matchData[index]?.info?.participants?.find(participant => participant.summonerName === sumsInfos.name)?.win ? 'true' : 'false'}
-                            //     gameMode={matchData[index]?.info?.gameMode}
-                            //     participants={matchData[index]?.info?.participants?}
-                            //     searchedName={sumsInfos.name}
-                            // />
-                            <div className={`match win-${matchData[index]?.info?.participants?.find(participant => participant.summonerName === sumsInfos.name)?.win ? 'true' : 'false'}`} key={index}>
-                                <h1>
-                                    <strong>Type de partie : {matchData[index]?.info?.gameMode}</strong>
-                                </h1>
-                                <div>
-                                    {matchData[index]?.info?.participants?.map((participant, indexBis) => (
-                                        <span key={indexBis}>
-                                            {participant.summonerName === sumsInfos.name ? (
-                                                <>
-                                                    <img src={champIcon[participant.championName+'.png']} alt={participant.championName} className='champIcons' />
-                                                    <strong>{participant.summonerName}</strong><br/>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <img src={champIcon[participant.championName+'.png']} alt={participant.championName} className='champIcons' />
-                                                    {participant.summonerName}<br/>
-                                                </>
-                                            )}
-                                        </span>
-                                    ))}
-                                </div>
-                                <br/>
-                            </div>
-                        ))}
-                    </ul>
+                    <div className='searched-infos'>
+                        
+                        <SumInfo 
+                            nom={sumsInfos.name} 
+                            niveau={sumsInfos.summonerLevel} 
+                            icone={icons[sumsInfos.profileIconId+".png"]}
+                            // Affichage des informations spécifiques à l'invocateur recherché
+                            />
+                        
+                        <div>
+                            {matchId.map((id, index) => (
+                                <Match
+                                key={index}
+                                matchData={matchData[index]}
+                                sumsInfos={sumsInfos}
+                                champIcon={champIcon}
+                                />
+                                ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
