@@ -5,8 +5,9 @@ import ImportAll from '../../components/ImportAll.jsx';
 import SumInfo from './SumInfo.jsx';
 import Match from './Match.jsx';
 
-let api_key='RGAPI-2d19c9fd-9e42-4898-b453-4bb5ca4e12ac'
+let api_key='RGAPI-6a874b6e-e040-47bf-ab94-b3d4585e596e'
 let summoner='GuyLeMuscle'
+// let tag = '4669'
 
 
 const champIcon = ImportAll(require.context('../../images/champion', false, /\.(png|jpe?g|svg)$/));
@@ -18,6 +19,8 @@ function Results(){
     const [matchData, setMatchData] = useState([]);
 
     useEffect(() => {
+        //https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/GuyLeMuscle/4669?api_key=RGAPI-6a874b6e-e040-47bf-ab94-b3d4585e596e
+        // fetch(`https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summoner}/${tag}?api_key=${api_key}`)
         fetch(`https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summoner}?api_key=${api_key}`)
             .then(response => response.json())
             .then(result => {setSumsInfos(result);
@@ -49,7 +52,7 @@ function Results(){
                     src={logoLol}
                     alt="logo de league of legends"
                 />
-                <div>
+                <div className='matches_and_infos'>
                     <h2>Matches:</h2>
                     <div className='searched-infos'>
                         
