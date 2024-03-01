@@ -1,0 +1,42 @@
+.input {
+    border: none;
+    border-radius: 15px;
+    background-color: #E8DFA7;
+    box-shadow: 6px 6px 12px #ffffff,
+                -6px -6px 12px #c5c5c5;
+    font-size: medium;
+    font-weight: bold;
+    max-width: 200px;
+    height: 6vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.input:focus {
+    outline-color: white;
+    place-content: "Enter your message!";
+}
+
+button {
+    color: #090909;
+    height: 6vh;
+    padding: 0.7em 1.7em;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 15px;
+    background: #E8DFA7;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #ffffff,
+                -6px -6px 12px #c5c5c5;
+    margin-left: 2vw;
+}
+
+button:hover {
+    border: 1px solid white;
+}
+
+button:active {
+    box-shadow: 4px 4px 12px #ffffff, -4px -4px 12px #c5c5c5;
+}

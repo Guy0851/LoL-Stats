@@ -4,16 +4,19 @@ import logoLol from "../../images/logo-lol.webp";
 import ImportAll from '../../components/ImportAll.jsx';
 import SumInfo from './SumInfo.jsx';
 import Match from './Match.jsx';
+import { useParams } from 'react-router-dom';
 
-let api_key='RGAPI-6a874b6e-e040-47bf-ab94-b3d4585e596e'
-let summoner='GuyLeMuscle'
-// let tag = '4669'
+let api_key='RGAPI-513eae97-904b-4433-b0e4-bdeddbce5aa0'
 
 
 const champIcon = ImportAll(require.context('../../images/champion', false, /\.(png|jpe?g|svg)$/));
 const icons = ImportAll(require.context('../../images/profileicon', false, /\.(png|jpe?g|svg)$/))
 
 function Results(){
+    const { summoner } = useParams();
+    console.log(summoner)
+
+
     const [sumsInfos, setSumsInfos] = useState({});
     const [matchId, setMatchId] = useState([]);
     const [matchData, setMatchData] = useState([]);
@@ -41,7 +44,7 @@ function Results(){
                 setMatchData(datas);
             })
             .catch(error => console.error('Erreur lors de la récupération des informations du summoner:', error));
-    }, []);
+    }, [summoner]);
 
     return (
         <>

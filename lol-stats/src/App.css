@@ -43,8 +43,9 @@
   margin-top: 10vh;
   background-color: beige;
   min-height: 120vh;
-  justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo-lol{
