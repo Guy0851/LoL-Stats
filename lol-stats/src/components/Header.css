@@ -1,0 +1,10 @@
+.menu-nav{
+    z-index: 2;
+    position:fixed;
+    top: 10vh;
+    left: 0px;
+    width: 30vw;
+    height: 90vh;
+    background-color: #E8DFA7 ;
+    bottom: 100%;
+}

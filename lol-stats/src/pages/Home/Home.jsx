@@ -5,8 +5,8 @@ import SearchBar from "./Searchbar.jsx";
 function Home(){
     return(
         <>
-        <Header/>
         <body className="home-body">
+        <Header/>
             <img
                 className='logo-lol'
                 src={logoLol}

@@ -6,7 +6,7 @@ import SumInfo from './SumInfo.jsx';
 import Match from './Match.jsx';
 import { useParams } from 'react-router-dom';
 
-let api_key='RGAPI-513eae97-904b-4433-b0e4-bdeddbce5aa0'
+let api_key='RGAPI-1a7d2ed0-5437-4751-8972-adf55f062485'
 
 
 const champIcon = ImportAll(require.context('../../images/champion', false, /\.(png|jpe?g|svg)$/));
@@ -14,8 +14,6 @@ const icons = ImportAll(require.context('../../images/profileicon', false, /\.(p
 
 function Results(){
     const { summoner } = useParams();
-    console.log(summoner)
-
 
     const [sumsInfos, setSumsInfos] = useState({});
     const [matchId, setMatchId] = useState([]);
@@ -48,8 +46,8 @@ function Results(){
 
     return (
         <>
-            <Header />
             <div className="home-body"> {/* Utilisez une balise <div> au lieu de <body> */}
+            <Header />
                 <img
                     className='logo-lol'
                     src={logoLol}
@@ -63,6 +61,8 @@ function Results(){
                             nom={sumsInfos.name} 
                             niveau={sumsInfos.summonerLevel} 
                             icone={icons[sumsInfos.profileIconId+".png"]}
+                            api_key={api_key}
+                            sumId={sumsInfos.id}
                             // Affichage des informations spécifiques à l'invocateur recherché
                             />
                         

@@ -1,11 +1,17 @@
+import Duration from "./Duration";
+
 const Match = ({ matchData, sumsInfos, champIcon }) => {
     const winClass = matchData?.info?.participants?.find(participant => participant.summonerName === sumsInfos.name)?.win ? 'true' : 'false';
+
     
     return (
         <div className={`match win-${winClass}`}>
             <h1>
                 <strong>Type de partie : {matchData?.info?.gameMode}</strong>
             </h1>
+            <Duration
+                gameDuration={matchData?.info?.gameDuration}
+            />
             <div className="win-and-loose">
                 <div className="winners">
                     <h2>Winners</h2>
