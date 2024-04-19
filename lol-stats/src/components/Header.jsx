@@ -12,10 +12,11 @@ function Header(){
     };
     return (
         <>
-        {menuVisible && <MenuNav/>}
+        <MenuNav isVisible={menuVisible} />
         <header className="App-header">
             <Logo
                 toggleMenu={toggleMenu}
+                isVisible={menuVisible}
                 />
             <a href='/home'>
                 <img

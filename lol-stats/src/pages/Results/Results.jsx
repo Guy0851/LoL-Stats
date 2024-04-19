@@ -6,7 +6,7 @@ import SumInfo from './SumInfo.jsx';
 import Match from './Match.jsx';
 import { useParams } from 'react-router-dom';
 
-let api_key='RGAPI-1a7d2ed0-5437-4751-8972-adf55f062485'
+let api_key='RGAPI-5db9f256-e6ae-489d-b322-485da6f9e4a3'
 
 
 const champIcon = ImportAll(require.context('../../images/champion', false, /\.(png|jpe?g|svg)$/));

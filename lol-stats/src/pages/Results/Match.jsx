@@ -18,7 +18,7 @@ const Match = ({ matchData, sumsInfos, champIcon }) => {
                         {matchData?.info?.participants
                             ?.filter(participant => participant.win === true)
                             .map((participant, index) => (
-                                <span key={index}>
+                                <span key={index} className="sumName">
                                     <img src={champIcon[participant.championName+'.png']} alt={participant.championName} className='champIcons' />
                                     {participant.summonerName === sumsInfos.name ? (
                                         <strong> {participant.summonerName} {participant.kills}/{participant.deaths}/{participant.assists}</strong>
@@ -35,7 +35,7 @@ const Match = ({ matchData, sumsInfos, champIcon }) => {
                         {matchData?.info?.participants
                             ?.filter(participant => participant.win === false)
                             .map((participant, index) => (
-                                <span key={index}>
+                                <span key={index} className="sumName">
                                     {participant.summonerName === sumsInfos.name ? (
                                         <strong>{participant.kills}/{participant.deaths}/{participant.assists} {participant.summonerName} </strong>
                                         ) : (

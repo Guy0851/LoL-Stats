@@ -1,10 +1,15 @@
-.menu-nav{
-    z-index: 2;
-    position:fixed;
-    top: 10vh;
-    left: 0px;
-    width: 30vw;
-    height: 90vh;
-    background-color: #E8DFA7 ;
-    bottom: 100%;
+.menu-nav {
+    margin-top: 10vh;
+    position: fixed;
+    top: 0;
+    left: -40vw; /* Cachez le menu hors de la vue par défaut */
+    width: 30vw; /* Ajustez la largeur selon vos besoins */
+    height: 100%; /* Ajustez la hauteur selon vos besoins */
+    background-color: #d9d2a2; /* Changez selon votre style */
+    transition: left ease 0.3s; /* Ajoutez une transition pour la propriété left */
+    z-index: 1;
+}
+
+.menu-nav.visible {
+    left: 0; /* Affichez le menu en positionnant la gauche à 0 */
 }
